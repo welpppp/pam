@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>The Most Beautiful Moment</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600&family=Playfair+Display:italic&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bts-purple: #6c4ab6;
+            --hyyh-mint: #a0d8d0;
+            --oled-black: #000000;
+        }
+
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            background-color: var(--oled-black);
+            color: white;
+            font-family: 'Montserrat', sans-serif;
+            overflow-x: hidden;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        /* Act 1: The Film Countdown */
+        #countdown-screen {
+            position: fixed;
+            inset: 0;
+            background: var(--oled-black);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 100;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .number {
+            font-size: 8rem;
+            opacity: 0;
+            position: absolute;
+        }
+
+        .film-grain {
+    position: fixed;
+    inset: 0;
+    background: url('https://www.transparenttextures.com/patterns/stardust.png'); /* Stable textured grain */
+    opacity: 0.1;
+    pointer-events: none;
+    z-index: 110;
+}
+
+        /* Act 2: Hero Section */
+        #main-content {
+            display: none;
+            opacity: 0;
+            transition: opacity 1.5s ease-in;
+        }
+
+        .hero-section {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .hero-img {
+            width: 85%;
+            border-radius: 15px;
+            box-shadow: 0 0 30px rgba(108, 74, 182, 0.5);
+            margin-bottom: 20px;
+            animation: float 4s ease-in-out infinite;
+        }
+
+        /* Act 3: The Gallery Stack */
+        .gallery-container {
+            padding: 50px 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .card {
+            width: 90%;
+            border-radius: 10px;
+            transform: perspective(1000px) rotateX(5deg);
+            transition: transform 0.5s;
+        }
+
+        .card img {
+            width: 100%;
+            border-radius: 10px;
+            display: block;
+        }
+
+        /* Act 4: The 06:13 Glitch */
+        #glitch-trigger {
+            font-family: monospace;
+            color: var(--bts-purple);
+            margin-top: 20px;
+            font-size: 0.9rem;
+        }
+
+        /* Act 5: The Rizz Note */
+        .rizz-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            margin: 40px 20px;
+            padding: 30px;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        footer {
+            padding: 20px;
+            font-size: 0.6rem;
+            text-align: center;
+            opacity: 0.4;
+            font-family: monospace;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+
+        .confetti {
+            position: fixed;
+            pointer-events: none;
+            z-index: 999;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="film-grain"></div>
+
+    <div id="countdown-screen">
+        <div class="number" id="num3">3</div>
+        <div class="number" id="num2">2</div>
+        <div class="number" id="num1">1</div>
+    </div>
+
+    <div id="main-content">
+        <section class="hero-section">
+            <img src="https://i.ibb.co/rJX7Ytq/f336e2c135247d12881913adcfde8883-removebg-preview.png" style="width: 50px; margin-bottom: 20px;" alt="HYYH">
+            <img src="https://i.pinimg.com/originals/d5/77/d1/d577d12bdd327b4320ff8786eace1cac.jpg" class="hero-img" alt="WWH">
+            <h1 style="font-family: 'Playfair Display'; font-style: italic;">The Most Beautiful Moment for Pam</h1>
+            <p style="font-size: 0.8rem; letter-spacing: 2px; opacity: 0.7;">LIFE GOES ON // 2026</p>
+            <div id="glitch-trigger" onclick="triggerGlitch()">TIME_STAMP: 06:13</div>
+        </section>
+
+        <div class="gallery-container">
+            <div class="card"><img src="https://i.pinimg.com/originals/4a/f2/74/4af27404c03ea33bc0806d741f13782a.jpg"></div>
+            <div class="card"><img src="https://lh3.googleusercontent.com/VXG5RlAg_AiTGCG-APW7YfcDmLIW82uGcGO4mHR20OPcFUZ15xROlCQdMnRU110HZ6gJjJpz0kAdStZT9ajn6pg9GhVy4HqCb79Gu8mrTQcSJIk=nu-e365-rj-q80-w925"></div>
+            <div class="card" style="transform: rotate(-2deg);"><img src="https://i.pinimg.com/236x/46/70/0f/46700f882328bb88344de51c4e85e2d3.jpg"></div>
+            <div class="card" style="transform: rotate(2deg);"><img src="https://i.pinimg.com/736x/25/c0/54/25c0546810cb3945c4396f88b3b91e67.jpg"></div>
+            <div class="card"><img src="https://i.pinimg.com/736x/81/ec/f7/81ecf7e6cb7c5f65ffc2db6a964e3dd7.jpg"></div>
+        </div>
+
+        <div class="rizz-card">
+            <p style="line-height: 1.6;">Happy Birthday, Pam. <br><br>You're stuck in the HYYH era, so I built this to keep up. Jin's got the visuals, but I've got the source code. <br><br>Hope this is enough to make today a little more beautiful.</p>
+            <p style="text-align: right; font-family: 'Playfair Display';">— Rohan</p>
+        </div>
+
+        <footer>
+            [SYSTEM_LOG]: Mission Successful.<br>
+            Note: Real men stan TWICE btw HAHA.
+        </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+    <script>
+        // Sequence Control
+        window.onload = () => {
+            const sequence = async () => {
+                await showNum('num3');
+                await showNum('num2');
+                await showNum('num1');
+                document.getElementById('countdown-screen').style.display = 'none';
+                const main = document.getElementById('main-content');
+                main.style.display = 'block';
+                setTimeout(() => { main.style.opacity = '1'; }, 50);
+                triggerHearts();
+            };
+            sequence();
+        };
+
+        function showNum(id) {
+            return new Promise(res => {
+                const el = document.getElementById(id);
+                el.style.opacity = '1';
+                setTimeout(() => {
+                    el.style.opacity = '0';
+                    setTimeout(res, 500);
+                }, 800);
+            });
+        }
+
+        function triggerHearts() {
+            confetti({
+                particleCount: 100,
+                spread: 70,
+                origin: { y: 0.6 },
+                colors: ['#6c4ab6', '#ffb7ff', '#ffffff']
+            });
+        }
+
+        function triggerGlitch() {
+            const body = document.body;
+            const originalBG = body.style.background;
+            body.style.backgroundImage = "url('https://i.pinimg.com/736x/78/f5/b2/78f5b24e9eb2f1aa471654cdb6eebc15.jpg')";
+            body.style.backgroundSize = "cover";
+            body.style.backgroundPosition = "center";
+            
+            setTimeout(() => {
+                body.style.backgroundImage = "";
+                body.style.backgroundColor = "black";
+            }, 1000);
+            
+            triggerHearts();
+        }
+    </script>
+</body>
+</html>
