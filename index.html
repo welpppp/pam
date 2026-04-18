@@ -7,22 +7,23 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600&family=Playfair+Display:italic&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bts-purple: #6c4ab6;
-            --hyyh-mint: #a0d8d0;
-            --oled-black: #000000;
-        }
+    --bts-purple: #6c4ab6;
+    --army-purple: #1e1333; /* Darker purple for the base */
+    --soft-lavender: #a288d9;
+}
 
-        body, html {
-            margin: 0;
-            padding: 0;
-            width: 100%;
-            height: 100%;
-            background-color: var(--oled-black);
-            color: white;
-            font-family: 'Montserrat', sans-serif;
-            overflow-x: hidden;
-            -webkit-tap-highlight-color: transparent;
-        }
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    /* A cinematic BTS-themed gradient */
+    background: linear-gradient(135deg, #0f081a 0%, #1e1333 50%, #0f081a 100%);
+    background-attachment: fixed;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    overflow-x: hidden;
+}
 
         /* Act 1: The Film Countdown */
         #countdown-screen {
@@ -71,7 +72,8 @@
         .hero-img {
             width: 85%;
             border-radius: 15px;
-            box-shadow: 0 0 30px rgba(108, 74, 182, 0.5);
+            box-shadow: 0 0 50px rgba(162, 136, 217, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.1);
             margin-bottom: 20px;
             animation: float 4s ease-in-out infinite;
         }
